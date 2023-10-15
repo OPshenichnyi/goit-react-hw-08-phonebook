@@ -1,4 +1,4 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, ErrorMessage } from "formik";
 import { FiledStyle, RegistrFormStyle } from "./RegisterForm.styled";
 export const RegisterForm = () => {
   return (
