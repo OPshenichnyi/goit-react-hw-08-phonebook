@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Field } from "formik";
 
 export const RegistrFormStyle = styled.div`
 
