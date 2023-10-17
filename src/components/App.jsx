@@ -1,10 +1,20 @@
 import { Route, Routes } from "react-router-dom";
 import { Layout } from "./Layout/Layout";
 import { Home } from "./pages/Home";
-import { RegisterForm } from "./pages/RegisterForm/RegisterForm";
+import { RegisterForm } from "./RegisterForm/RegisterForm";
 import { LoginForm } from "./LoginForm/LoginForm";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+
+import { refreshUser } from "./authorization/operationAuth";
 
 export const App = () => {
+  const dispatch = useDispatch()
+  
+  useEffect(() => {
+    dispatch(refreshUser())
+  }, [dispatch])
+  
   return (
     <Routes>
       <Route path="/" element={<Layout/>}>

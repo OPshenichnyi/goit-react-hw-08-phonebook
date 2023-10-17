@@ -7,7 +7,7 @@ margin: auto;
 margin-top: 25px;
 text-align: center;
 	width: 350px;
-	height: 500px;
+	height: 400px;
 	background: white;
 	overflow: hidden;
 	border-radius: 10px;
@@ -22,7 +22,7 @@ button{
 	background: #573b8a;
 	font-size: 1em;
 	font-weight: bold;
-	margin-top: 20px;
+	margin-top: 60px;
 	outline: none;
 	border: none;
 	border-radius: 5px;
@@ -37,7 +37,7 @@ label{
 	font-size: 1.3em;
 	justify-content: center;
 	display: flex;
-	margin: 5px;
+	margin: 15px;
 	font-weight: bold;
 	cursor: pointer;
 	transition: .5s ease-in-out;

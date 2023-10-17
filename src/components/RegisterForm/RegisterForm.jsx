@@ -1,36 +1,34 @@
 import { Formik, Form, ErrorMessage } from "formik";
 import { FiledStyle, RegistrFormStyle } from "./RegisterForm.styled";
+import { useDispatch } from "react-redux";
+import { registration } from "components/authorization/operationAuth";
+
+
 export const RegisterForm = () => {
+  const dispatch = useDispatch() 
   return (
     <RegistrFormStyle>
-          <h1>Login</h1>
+          <h1>Register</h1>
      <Formik
        initialValues={{ email: '', password: '', name: '' }}
-       onSubmit={(values, { setSubmitting }) => {
-         setTimeout(() => {
-           alert(JSON.stringify(values, null, 2));
-           setSubmitting(false);
-         }, 400);
+        onSubmit={(values, actions) => {
+         dispatch( registration(values))
+          actions.resetForm(true)
        }}
      >
        {({ isSubmitting }) => (
          <Form>
                       <label htmlFor="firstName">First Name</label>
-                      <br />
-           <FiledStyle type="name" name="name" />
-           <ErrorMessage name="name" component="div" />
+                      <FiledStyle type="name" name="name" placeholder="Jane" />
+                      <ErrorMessage name="name" component="div" />
            
-                      <br />
                       <label htmlFor="firstName">Email</label>
-                      <br />
-                      <FiledStyle type="email" name="email" />
+                      <FiledStyle type="email" name="email" placeholder="test@gmail.com" />
                       <ErrorMessage name="email" component="div" />
-                      <br />
+                     
                       <label htmlFor="firstName">Pasword</label>
-                      <br />
-                      <FiledStyle type="password" name="password" />
+                      <FiledStyle type="password" name="password" placeholder="Input your pasword" />
                       <ErrorMessage name="password" component="div" />
-                      <br />
                       <button type="submit" disabled={isSubmitting}>
                           Submit
                       </button>
