@@ -1,4 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { fillterReducer } from "components/Contacts/SliceFilter";
+import { contactsReducer } from "components/OperationContacts/slice";
 import { authorizationReducer } from "components/authorization/sliceAuth";
 import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE } from "redux-persist";
 import persistReducer from "redux-persist/es/persistReducer";
@@ -14,8 +16,9 @@ const authPersistConfiguration = {
 export const store = configureStore(
     {
         reducer: {
-            auth: persistReducer(authPersistConfiguration, authorizationReducer)
-            // contact: []
+            auth: persistReducer(authPersistConfiguration, authorizationReducer),
+            contact: contactsReducer,
+            fillter: fillterReducer,
         },
         middleware: getDefaultMiddleware =>
             getDefaultMiddleware({

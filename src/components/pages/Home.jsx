@@ -7,10 +7,14 @@ export const Home = () => {
   return (
     
       <StyleHome>
-         {!isLogined &&( <div>
+         {!isLogined ? ( <div>
               <h2>Welcome to phone book</h2>
               <p>Please login or register</p>
-          </div>)}
+      </div>): 
+        (<div>
+          <h2>Welcome to phone book</h2>
+        </div>
+      )}
     </StyleHome>
   )
 }
