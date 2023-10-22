@@ -1,23 +1,23 @@
 import { changeFindStr } from "./SliceFilter"
-import { CssFilterWrrap } from "./Filter.styled" 
+import { CssFilterWrrap, ContainerFilter } from "./Filter.styled" 
 import { useDispatch } from "react-redux"
+
 
 export const Filter = () => {
     const dispatch = useDispatch()
     return (
+        <ContainerFilter>
         <CssFilterWrrap>
-            <label htmlFor="name">
-                Filter
-                <br />
-                <input
-                    type="text"
-                    name="filter"
+                <input    
+                type="text"
+                name="filter"
+                placeholder="Search contact"
                     onChange={(e) => {
                         e.preventDefault()
                         dispatch(changeFindStr(e.target.value))
                     }}
                 />
-            </label>
-        </CssFilterWrrap>
+            </CssFilterWrrap>
+        </ContainerFilter>
     )
 }

@@ -1,4 +1,4 @@
-import { ListItemPhone } from "./ContactsList.styled";
+import { ListItemPhone, CssList } from "./ContactsList.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteContactAPI } from "components/OperationContacts/operation";
 import { selectAllContacts } from "components/OperationContacts/selectors";
@@ -6,7 +6,6 @@ import { selectFilter } from "./selectorFiltr";
 
 
 const listContacts = (listPhone, filter) => {
-
   if (filter.length === 0) {
     return listPhone
   }
@@ -22,7 +21,7 @@ export const ContactsList = () => {
 
 
   return (
-    <ul>
+    <CssList>
       {FiltredList.map(({ id, name, phone }) => (
         <ListItemPhone key={id}>
           <span>{name}:</span>
@@ -34,6 +33,6 @@ export const ContactsList = () => {
           >Delete</button>
         </ListItemPhone>
       ))}
-    </ul>
+    </CssList>
   )
 }

@@ -2,6 +2,15 @@ import { Formik, Form, ErrorMessage } from "formik";
 import { FiledStyle, RegistrFormStyle } from "./RegisterForm.styled";
 import { useDispatch } from "react-redux";
 import { registration } from "components/authorization/operationAuth";
+import * as Yup from "yup";
+
+const SignupSchema = Yup.object().shape({
+  name: Yup.string()
+    .matches(/^[a-zA-Zа-яА-Я ]*$/, 'Must be string')
+    .min(3, 'Must be at least 3 characters long')
+    .required('Required'),
+  email: Yup.string().email()
+});
 
 
 export const RegisterForm = () => {
@@ -9,8 +18,9 @@ export const RegisterForm = () => {
   return (
     <RegistrFormStyle>
           <h1>Register</h1>
-     <Formik
-       initialValues={{ email: '', password: '', name: '' }}
+      <Formik
+        validationSchema={SignupSchema}
+        initialValues={{ email: '', password: '', name: '' }}
         onSubmit={(values, actions) => {
          dispatch( registration(values))
           actions.resetForm(true)

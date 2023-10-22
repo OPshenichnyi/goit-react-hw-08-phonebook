@@ -44,18 +44,17 @@ export const ContactsForm = () => {
       }}
     >
       <WrapperForm>
-        <label htmlFor="name">Name</label>
+        <h2>Add your phone contacts</h2>
         <br />
         <CssInput id="name" name="name" placeholder="Name" />
         <br />
         <ErrorMessage name="name" />
         <br />
-        <label htmlFor="number">Number</label>
         <CssInput id="number" name="number" placeholder="Phone" />
         <br />
         <ErrorMessage name="number" />
         <br />
-        <button type="submit">Submit</button>
+        <button type="submit">Add Contact</button>
       </WrapperForm>
     </Formik>
   )

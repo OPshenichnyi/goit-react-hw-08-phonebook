@@ -8,5 +8,4 @@ margin: auto;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
     box-shadow: 5px 20px 50px #000;
-	/* background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); */
 `

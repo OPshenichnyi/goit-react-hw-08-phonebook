@@ -7,7 +7,7 @@ margin: auto;
 margin-top: 25px;
 text-align: center;
 	width: 350px;
-	height: 500px;
+	min-height: 500px;
 	background: white;
 	overflow: hidden;
 	border-radius: 10px;

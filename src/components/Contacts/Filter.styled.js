@@ -1,22 +1,32 @@
 import styled from 'styled-components'
+export const ContainerFilter = styled.div`
+padding-left: 20px;
+padding-right: 20px;
+`
 
 export const CssFilterWrrap = styled.form`
+display: flex;
+padding: 15px;
+justify-content: center;
+background-color: #A2CFCD;
+border-radius: 12px;
+
 label{
-  display:block;
-  margin:28px 0 0;
   font-size:14px;
   color:#5a5a5a 
 }
 
 input{
-width:100%;
-padding:10px;
-box-sizing:border-box;
-background:none;
-outline:none;
-resize:none;
+/* padding: 5px; */
+margin-left: 15px;
+width: 350px;
+height: 30px;
+border-radius: 12px;
+text-align: center;
+font-size: 18px;
+
 border:0;
 font-family:'Montserrat';
-border-bottom:2px solid #bebed2;
+/* border-bottom:2px solid #bebed2; */
 }
 `

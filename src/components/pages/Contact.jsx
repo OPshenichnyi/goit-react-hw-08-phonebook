@@ -5,6 +5,7 @@ import { getContactApi } from "components/OperationContacts/operation"
 import { selectLoading } from "components/OperationContacts/selectors"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
+import { SectionContacts, ContainerContacts, ContainerList} from "./Contact.styled"
 
 
 export const Contact = () => {
@@ -15,11 +16,16 @@ export const Contact = () => {
     dispatch(getContactApi())
   }, [dispatch])
   return (
-    <>
-      <ContactsForm />
-      <Filter/>
-      <div>{isLoading && 'Request in progress...'}</div>
-      <ContactsList/>
-    </>
+      <ContainerContacts>
+    <SectionContacts>
+        <ContactsForm />
+       
+      </SectionContacts>
+      <ContainerList>
+        <Filter />
+        <div>{isLoading && 'Request in progress...'}</div>
+        <ContactsList />
+      </ContainerList>
+      </ContainerContacts>
   )
 }
