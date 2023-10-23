@@ -1,22 +1,23 @@
 import { ListItemPhone, CssList } from "./ContactsList.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteContactAPI, getContactApi } from "components/OperationContacts/operation";
-import { selectFilter } from "./selectorFiltr";
 import { useEffect } from "react";
 import { selectIsLogined } from "components/authorization/selectorAuth";
+import { selectVisibleContacts } from "components/OperationContacts/selectors";
 
 
 
 
 export const ContactsList = () => {
   const dispatch = useDispatch()
-  const listContact = useSelector(selectFilter)
+  const listContact = useSelector(selectVisibleContacts)
   const isLoading = useSelector(selectIsLogined)
   
   useEffect(() => {
-    if (isLoading) {
-      dispatch(getContactApi())
+    if (!isLoading) {
+      return
     }
+    dispatch(getContactApi())
   }, [dispatch, isLoading])
 
 
