@@ -11,6 +11,10 @@ import { RegisterForm } from "./RegisterForm/RegisterForm";
 import { LoginForm } from "./LoginForm/LoginForm";
 import { Contact } from "./pages/Contact";
 
+// const Home = lazy(() => {import("./pages/Home")});
+// const RegisterForm = lazy(() => import("./RegisterForm/RegisterForm"));
+// const LoginForm = lazy(() => import("./LoginForm/LoginForm"));
+// const Contact = lazy(() => import("./LoginForm/LoginForm"));
 
 export const App = () => {
   const dispatch = useDispatch()
